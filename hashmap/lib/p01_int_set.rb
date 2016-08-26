@@ -72,10 +72,7 @@ class ResizingIntSet
   end
 
   def insert(num)
-    if count >= num_buckets
-      resize!
-    end
-
+    resize! if count >= num_buckets
     self[num] << num
     @count += 1
   end

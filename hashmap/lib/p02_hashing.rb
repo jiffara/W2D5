@@ -6,7 +6,7 @@ class Array
   def hash
     result = 0
     self.each_with_index do |el, i|
-      result += (el + i).hash
+      result += (el.hash + i).hash
     end
     result
   end
@@ -27,7 +27,7 @@ class Hash
     self.keys.each do |key|
       result += key.hash
     end
-    
+
     self.values.each do |value|
       result += value.hash
     end
